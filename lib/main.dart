@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widgets/listImgesView.dart';
+import 'widgets/layout_demo.dart';
 import 'widgets/bottomNavigtion/bottomNavigtionDemo.dart';
 import 'widgets/BasicDemo.dart';
 
@@ -77,11 +78,7 @@ class Page extends StatelessWidget {
         children: <Widget>[
           ListImges(),
           BasicDemo(),
-          Icon(
-            Icons.accessibility,
-            size: 128,
-            color: Colors.black12,
-          ),
+          LayoutDemo(),
         ],
       ),
       drawer: Drawer(

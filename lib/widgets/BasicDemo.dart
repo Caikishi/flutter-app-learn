@@ -6,20 +6,14 @@ class BasicDemo extends StatelessWidget {
     return MyContainer();
   }
 }
-
-/**
- * 文字测试
- */
+///测试Text控件
 class MyText extends StatelessWidget {
-  String _name = "hhq";
-  TextStyle _textStyle = new TextStyle(fontSize: 30.0);
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Text(
-      '$_name测试数据',
+      'hhq',
       textAlign: TextAlign.center,
-      style: _textStyle,
+      style: TextStyle(fontSize: 30.0),
     );
   }
 }

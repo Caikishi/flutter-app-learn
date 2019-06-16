@@ -11,7 +11,6 @@ class Hello extends StatelessWidget {
 class MyText extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Center(
       child: Text(
         'hello',

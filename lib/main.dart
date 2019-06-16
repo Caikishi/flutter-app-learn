@@ -3,6 +3,7 @@ import 'widgets/listImgesView.dart';
 import 'widgets/layout_demo.dart';
 import 'widgets/bottomNavigtion/bottomNavigtionDemo.dart';
 import 'widgets/BasicDemo.dart';
+import 'widgets/View_demo.dart';
 
 void main() => runApp(App());
 
@@ -25,7 +26,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Page(),
     );
   }
@@ -71,6 +72,9 @@ class Page extends StatelessWidget {
             Tab(
               icon: Icon(Icons.accessibility),
             ),
+            Tab(
+              icon: Icon(Icons.view_quilt),
+            ),
           ],
         ),
       ),
@@ -79,6 +83,7 @@ class Page extends StatelessWidget {
           ListImges(),
           BasicDemo(),
           LayoutDemo(),
+          ViewDemo(),
         ],
       ),
       drawer: Drawer(

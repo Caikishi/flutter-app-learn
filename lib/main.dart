@@ -4,6 +4,8 @@ import 'widgets/layout_demo.dart';
 import 'widgets/bottomNavigtion/bottomNavigtionDemo.dart';
 import 'widgets/BasicDemo.dart';
 import 'widgets/View_demo.dart';
+import 'widgets/sliver_demo.dart';
+import 'widgets/navigator_demo.dart';
 
 void main() => runApp(App());
 
@@ -43,7 +45,7 @@ class Page extends StatelessWidget {
         //   tooltip: 'Navigration',
         //   onPressed: () => debugPrint('Navigration button is pressed.'),
         // ),
-        title: Text('NINGHAO'),
+        title: Text('主页'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
@@ -56,7 +58,7 @@ class Page extends StatelessWidget {
             onPressed: () => debugPrint('horiz button is pressed.'),
           ),
         ],
-        elevation: 30.0,
+        elevation: 0,
         bottom: TabBar(
           unselectedLabelColor: Colors.black38,
           indicatorColor: Colors.black54,
@@ -83,10 +85,24 @@ class Page extends StatelessWidget {
           ListImges(),
           BasicDemo(),
           LayoutDemo(),
-          ViewDemo(),
+          SliverDemo(),
         ],
       ),
-      drawer: Drawer(
+      drawer: Container(
+        width: 300,
+        // height: 100,
+        color: Colors.white,
+        child: MyDrawerDemo(),
+      ),
+      bottomNavigationBar: BottomNavigationDemo()
+    );
+  }
+}
+
+class MyDrawerDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -103,24 +119,17 @@ class Page extends StatelessWidget {
                 backgroundImage: NetworkImage('https://p.ssl.qhimg.com/dmfd/400_300_/t010774c3ffd8c986a2.jpg'),
               ),
               decoration: BoxDecoration(
-                color: Colors.yellow[400],
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                    Colors.yellow[400], 
-                    BlendMode.modulate
-                    ),
-                  image: NetworkImage('https://resources.ninghao.org/images/childhood-in-a-picture.jpg')
-                ),
+                // color: Colors.yellow[400],
+               
               ),
 
             ),
             ListTile(
               title: Text(
-                'Messages',
-                textAlign: TextAlign.right,
+                '个人中心',
+                textAlign: TextAlign.left,
               ),
-              trailing: Icon(
+              leading: Icon(
                 Icons.message,
                 color: Colors.black12,
                 size: 22.0,
@@ -129,10 +138,10 @@ class Page extends StatelessWidget {
             ),
             ListTile(
               title: Text(
-                'Favorite',
-                textAlign: TextAlign.right,
+                '列表',
+                textAlign: TextAlign.left,
               ),
-              trailing: Icon(
+              leading: Icon(
                 Icons.favorite,
                 color: Colors.black12,
                 size: 22.0,
@@ -141,10 +150,10 @@ class Page extends StatelessWidget {
             ),
             ListTile(
               title: Text(
-                'Settings',
-                textAlign: TextAlign.right,
+                '书签',
+                textAlign: TextAlign.left,
               ),
-              trailing: Icon(
+              leading: Icon(
                 Icons.settings,
                 color: Colors.black12,
                 size: 22.0,
@@ -153,8 +162,9 @@ class Page extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationDemo()
-    );
+      );
   }
 }
+
+
+

@@ -4,7 +4,7 @@ class LayoutDemo extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -29,8 +29,8 @@ class IconBadge extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       child: Icon(icon, size: size, color: Colors.white,),
-      width: size + 60,
-      height: size + 60,
+      width: size + 13,
+      height: size + 13,
       color: Color.fromRGBO(3, 54, 255, 1),
     );
   }

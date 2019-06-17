@@ -4,7 +4,7 @@ import '../model/post.dart';
 class ViewDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GridViewBuilderDemo();
+    return PageViewDemo();
   }
 }
 
@@ -130,7 +130,7 @@ class PageViewDemo extends StatelessWidget {
     return PageView(
       // pageSnapping: false,//页面不会自动翻滚
       // reverse: true,//无限循环
-      scrollDirection: Axis.vertical, //垂直
+      // scrollDirection: Axis.vertical, //垂直
       // onPageChanged: (currentPage) => debugPrint('Page: $currentPage'),//切换回调函数
       // controller: PageController(
       //   initialPage: 1,
@@ -140,7 +140,7 @@ class PageViewDemo extends StatelessWidget {
       children: <Widget>[
         Container(
           color: Colors.brown[900],
-          alignment: Alignment(0, 0),
+          alignment: Alignment.center,
           child: Text(
             'ONE',
             style: TextStyle(fontSize: 32, color: Colors.white),
@@ -148,7 +148,7 @@ class PageViewDemo extends StatelessWidget {
         ),
         Container(
           color: Colors.grey[900],
-          alignment: Alignment(0, 0),
+          alignment: Alignment.center,
           child: Text(
             'TWO',
             style: TextStyle(fontSize: 32, color: Colors.white),

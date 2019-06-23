@@ -14,7 +14,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyListViewDemo(),
+      home: Home(),
       theme: ThemeData(
         // primarySwatch: Colors.yellow,
         primaryColor: Color.fromRGBO(251, 66, 117, 1),
@@ -31,9 +31,15 @@ class TestImg extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.amber,
-      child: Image.asset(
-        'assets/images/xiaogou.jpg',
-        fit: BoxFit.contain,
+      child: Stack(
+        alignment: const Alignment(0.6, 0.6),
+        children: <Widget>[
+          Image.asset(
+            'assets/images/xiaogou.jpg',
+            fit: BoxFit.contain,
+          ),
+          Icon(Icons.pool, size: 30, color: Colors.white,),
+        ],
       ),
     );
   }
@@ -47,17 +53,20 @@ class MyListViewDemo extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           ListTile(
-            leading: Image.network("http://img.wxcha.com/file/201603/07/7ec4c7c1f7.jpg"),
+            leading: Image.network(
+                "http://img.wxcha.com/file/201603/07/7ec4c7c1f7.jpg"),
             title: Text("测试1"),
             subtitle: Text("随便1"),
           ),
           ListTile(
-            leading: Image.network("http://img.wxcha.com/file/201603/07/7ec4c7c1f7.jpg"),
+            leading: Image.network(
+                "http://img.wxcha.com/file/201603/07/7ec4c7c1f7.jpg"),
             title: Text("测试2"),
             subtitle: Text("随便2"),
           ),
           ListTile(
-            leading: Image.network("http://img.wxcha.com/file/201603/07/7ec4c7c1f7.jpg"),
+            leading: Image.network(
+                "http://img.wxcha.com/file/201603/07/7ec4c7c1f7.jpg"),
             title: Text("测试3"),
             subtitle: Text("随便3"),
           ),
@@ -126,7 +135,7 @@ class Page extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             ListImges(),
-            BasicDemo(),
+            TestImg(),
             LayoutDemo(),
             SliverDemo(),
           ],

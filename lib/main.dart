@@ -9,6 +9,7 @@ import 'widgets/navigator_demo.dart';
 
 void main() => runApp(App());
 
+///App入口
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,8 +17,12 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Home(),
       theme: ThemeData(
+<<<<<<< HEAD
         // primarySwatch: Colors.yellow,
         primaryColor: Color.fromRGBO(251, 66, 117, 1),
+=======
+        primarySwatch: Colors.blue,
+>>>>>>> 7a69a20d3f038d1906af08ca3163580f2df56456
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
         splashColor: Colors.white70,
       ),

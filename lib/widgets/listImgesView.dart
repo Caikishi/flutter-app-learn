@@ -8,7 +8,17 @@ class ListImges extends StatelessWidget {
       margin: EdgeInsets.all(8),
       child: Column(
         children: <Widget>[
-          Image.network(posts[index].imgUrl),
+          Stack(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.amber)
+                ),
+                child: Container(width: 150,height: 150,color: Colors.white,),
+              )
+            ],
+          ),
           SizedBox(
             height: 16,
           ),
@@ -42,11 +52,9 @@ class TwitterListView extends StatelessWidget {
           Container(
             width: 50,
             height: 50,
-            decoration: BoxDecoration(
-            color: Colors.yellow,
-              shape: BoxShape.circle
-            ),
-            child: Image.network(posts[index].imgUrl),
+            decoration:
+                BoxDecoration(color: Colors.yellow, shape: BoxShape.circle),
+            child: Image.network(posts[index].imageUrl),
           ),
           Column(
             children: <Widget>[

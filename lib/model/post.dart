@@ -1,41 +1,89 @@
-class Post{
+class Post {
   const Post({
     this.title,
     this.author,
-    this.imgUrl
+    this.imageUrl
   });
 
   final String title;
   final String author;
-  final String imgUrl;
-
+  final String imageUrl;
 }
 
-
-final List<Post> posts =[
+final List<Post> posts = [
   Post(
-    title: "test1",
-    author: "testAuthor1",
-    imgUrl: "https://p.ssl.qhimg.com/dmfd/400_300_/t010774c3ffd8c986a2.jpg" 
+    title: 'Candy Shop',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/candy-shop.jpg',
   ),
   Post(
-    title: "test2",
-    author: "testAuthor2",
-    imgUrl: "https://p.ssl.qhimg.com/dmfd/400_300_/t0120b2f23b554b8402.jpg" 
+    title: 'Childhood in a picture',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/childhood-in-a-picture.jpg',
   ),
   Post(
-    title: "test3",
-    author: "testAuthor3",
-    imgUrl: "http://pic.sc.chinaz.com/files/pic/pic9/201508/apic14052.jpg"
+    title: 'Contained',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/contained.jpg',
   ),
   Post(
-    title: "test4",
-    author: "testAuthor4",
-    imgUrl: "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=180962438,4273140865&fm=26&gp=0.jpg"
+    title: 'Dragon',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/dragon.jpg',
   ),
   Post(
-    title: "test5",
-    author: "testAuthor5",
-    imgUrl: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1360037093,3112119608&fm=26&gp=0.jpg"
+    title: 'Free Hugs',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/free_hugs.jpg',
+  ),
+  Post(
+    title: 'Gravity Falls',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/gravity-falls.png',
+  ),
+  Post(
+    title: 'Icecream Truck',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/icecreamtruck.png',
+  ),
+  Post(
+    title: 'keyclack',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/keyclack.jpg',
+  ),
+  Post(
+    title: 'Overkill',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/overkill.png',
+  ),
+  Post(
+    title: 'Say Hello to Barry',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/say-hello-to-barry.jpg',
+  ),
+  Post(
+    title: 'Space Skull',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/space-skull.jpg',
+  ),
+  Post(
+    title: 'The Old Fashioned',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/the-old-fashioned.png',
+  ),
+  Post(
+    title: 'Tornado',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/tornado.jpg',
+  ),
+  Post(
+    title: 'Undo',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/undo.jpg',
+  ),
+  Post(
+    title: 'White Dragon',
+    author: 'Mohamed Chahin',
+    imageUrl: 'https://resources.ninghao.org/images/white-dragon.jpg',
   )
 ];

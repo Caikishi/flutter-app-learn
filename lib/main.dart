@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'widgets/listImgesView.dart';
 import 'widgets/layout_demo.dart';
 import 'widgets/bottomNavigtion/bottomNavigtionDemo.dart';
@@ -31,16 +32,39 @@ class TestImg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
       color: Colors.amber,
-      child: Stack(
-        alignment: const Alignment(0.6, 0.6),
-        children: <Widget>[
-          Image.asset(
-            'assets/images/xiaogou.jpg',
-            fit: BoxFit.contain,
+      child: SizedBox(
+        width: 150,
+        height: 150,
+        child: Container(
+          color: Colors.green,
+          child: Stack(
+            alignment: Alignment.center,
+            overflow: Overflow.visible,
+            children: <Widget>[
+              Container(
+                color: Colors.yellowAccent,
+                width: 50,
+                height: 50,
+              ),
+              Text('测试'),
+              Positioned(
+                right: -10,
+                top: -10,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent,
+                    shape: BoxShape.circle
+                  ),
+                  width: 50,
+                  height: 50,
+                  
+                ),
+              )
+            ],
           ),
-          Icon(Icons.pool, size: 30, color: Colors.white,),
-        ],
+        ),
       ),
     );
   }

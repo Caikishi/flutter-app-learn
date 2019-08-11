@@ -10,16 +10,18 @@ class NavigatorDemo extends StatelessWidget{
           children: <Widget>[
             FlatButton(
               child: Text('Home'),
-              onPressed: null,
+              onPressed: () => Navigator.pushNamed(context, '/home'),
             ),
             FlatButton(
               child: Text('About'),
               onPressed: (){
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => Page(title: 'About',)
-                  ),
-                );
+                ///指定路由名称
+                Navigator.pushNamed(context, '/about');
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (BuildContext context) => NavigatorPage(title: 'About',)
+                //   ),
+                // );
               },
             ),
           ],
@@ -30,10 +32,10 @@ class NavigatorDemo extends StatelessWidget{
 }
 
 
-class Page extends StatelessWidget{
+class NavigatorPage extends StatelessWidget{
   final String title;
 
-  Page({
+  NavigatorPage({
     this.title
   });
 
@@ -42,7 +44,12 @@ class Page extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        elevation: 0,
+        elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color.fromRGBO(251, 66, 117, 1),
+        child: Icon(Icons.arrow_back),
+        onPressed: () => Navigator.pop(context),
       ),
     );
   }

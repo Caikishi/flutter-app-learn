@@ -29,9 +29,7 @@ class SliverDemo extends StatelessWidget {
           ),
           SliverSafeArea(
             sliver: SliverPadding(
-              padding: EdgeInsets.all(8.0), 
-              sliver: SliverListDemo()
-            ),
+                padding: EdgeInsets.all(8.0), sliver: SliverListDemo()),
           ),
         ],
       ),
@@ -46,44 +44,43 @@ class SliverListDemo extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         (BuildContext context, int index) {
           return Padding(
-            padding: EdgeInsets.only(bottom: 32.0),
-            child: Material(
-              borderRadius: BorderRadius.circular(12.0),
-              elevation: 14.0,
-              shadowColor: Colors.grey.withOpacity(0.5),
-              child: Stack(
-                children: <Widget>[
-                  AspectRatio(
-                    aspectRatio: 16/9,
-                    child: Image.network(
-                      posts[index].imageUrl,
-                      fit: BoxFit.cover,
+            padding: EdgeInsets.only(bottom: 16.0, top: 16.0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(6),
+              child: Material(
+                // borderRadius: BorderRadius.circular(12.0),
+                elevation: 14.0,
+                shadowColor: Colors.grey.withOpacity(0),
+                child: Stack(
+                  children: <Widget>[
+                    AspectRatio(
+                      aspectRatio: 16 / 9,
+                      child: Image.network(
+                        posts[index].imageUrl,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
-                  Positioned(
-                    top: 32.0,
-                    left: 32.0,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          posts[index].title,
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.white
+                    Positioned(
+                      top: 32.0,
+                      left: 32.0,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            posts[index].title,
+                            style:
+                                TextStyle(fontSize: 20.0, color: Colors.white),
                           ),
-                        ),
-                        Text(
-                          posts[index].author,
-                          style: TextStyle(
-                            fontSize: 13.0,
-                            color: Colors.white
+                          Text(
+                            posts[index].author,
+                            style:
+                                TextStyle(fontSize: 13.0, color: Colors.white),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           );

@@ -7,8 +7,8 @@ import 'widgets/BasicDemo.dart';
 import 'widgets/View_demo.dart';
 import 'widgets/sliver_demo.dart';
 import 'widgets/navigator_demo.dart';
-
-void main() => runApp(App());
+import 'widgets/VideoApp.dart';
+void main() => runApp(VideoApp());
 
 ///App入口
 class App extends StatelessWidget {
@@ -16,7 +16,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      // home: NavigatorDemo(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => NavigatorDemo(),
+        '/about': (context) => NavigatorPage(title: 'About'),
+        '/home': (context) => Home(),
+      },
       theme: ThemeData(
         // primarySwatch: Colors.yellow,
         primaryColor: Color.fromRGBO(251, 66, 117, 1),
@@ -54,12 +60,9 @@ class TestImg extends StatelessWidget {
                 top: -10,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent,
-                    shape: BoxShape.circle
-                  ),
+                      color: Colors.blueAccent, shape: BoxShape.circle),
                   width: 50,
                   height: 50,
-                  
                 ),
               )
             ],

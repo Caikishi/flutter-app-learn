@@ -6,6 +6,7 @@ import 'package:transparent_image/transparent_image.dart';
 
 class ListImges extends StatelessWidget {
   Widget _listItemBuilder(BuildContext context, int index) {
+    print(index);
     return Container(
       // color: Colors.yellow,
       margin: EdgeInsets.all(8),
@@ -101,6 +102,7 @@ class ListImges extends StatelessWidget {
 
 class TwitterListView extends StatelessWidget {
   Widget _listItemBuilder(BuildContext context, int index) {
+    print(index);
     return Container(
       // color: Colors.yellow,
       margin: EdgeInsets.all(8),

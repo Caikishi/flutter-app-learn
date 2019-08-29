@@ -8,7 +8,8 @@ import 'widgets/View_demo.dart';
 import 'widgets/sliver_demo.dart';
 import 'widgets/navigator_demo.dart';
 import 'widgets/VideoApp.dart';
-void main() => runApp(VideoApp());
+
+void main() => runApp(App());
 
 ///App入口
 class App extends StatelessWidget {
@@ -17,7 +18,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: NavigatorDemo(),
-      initialRoute: '/',
+      initialRoute: '/home',
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => NavigatorPage(title: 'About'),
@@ -108,7 +109,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 1,
       child: Page(),
     );
   }
@@ -118,63 +119,67 @@ class Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          // leading: IconButton(
-          //   icon: Icon(Icons.menu),
-          //   tooltip: 'Navigration',
-          //   onPressed: () => debugPrint('Navigration button is pressed.'),
-          // ),
-          title: Text('主页'),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.search),
-              tooltip: 'Search',
-              onPressed: () => debugPrint('Search button is pressed.'),
-            ),
-            IconButton(
-              icon: Icon(Icons.more_horiz),
-              tooltip: 'horiz',
-              onPressed: () => debugPrint('horiz button is pressed.'),
-            ),
-          ],
-          elevation: 0,
-          bottom: TabBar(
-            unselectedLabelColor: Colors.black38,
-            indicatorColor: Colors.black54,
-            indicatorSize: TabBarIndicatorSize.tab,
-            indicatorWeight: 2.0,
-            tabs: <Widget>[
-              Tab(
-                icon: Icon(Icons.local_florist),
-              ),
-              Tab(
-                icon: Icon(Icons.change_history),
-              ),
-              Tab(
-                icon: Icon(Icons.accessibility),
-              ),
-              Tab(
-                icon: Icon(Icons.view_quilt),
-              ),
-            ],
+      appBar: AppBar(
+        centerTitle: true,
+        // leading: IconButton(
+        //   icon: Icon(Icons.menu),
+        //   tooltip: 'Navigration',
+        //   onPressed: () => debugPrint('Navigration button is pressed.'),
+        // ),
+        title: Text('主页'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            tooltip: 'Search',
+            onPressed: () => debugPrint('Search button is pressed.'),
           ),
-        ),
-        body: TabBarView(
-          children: <Widget>[
-            ListImges(),
-            TestImg(),
-            LayoutDemo(),
-            SliverDemo(),
-          ],
-        ),
-        drawer: Container(
-          width: 300,
-          // height: 100,
-          color: Colors.white,
-          child: MyDrawerDemo(),
-        ),
-        bottomNavigationBar: BottomNavigationDemo());
+          IconButton(
+            icon: Icon(Icons.more_horiz),
+            tooltip: 'horiz',
+            onPressed: () => debugPrint('horiz button is pressed.'),
+          ),
+        ],
+        elevation: 0,
+        // bottom: TabBar(
+        //   onTap: (index) {
+        //     print(index);
+        //   },
+        //   unselectedLabelColor: Colors.black38,
+        //   indicatorColor: Colors.black54,
+        //   indicatorSize: TabBarIndicatorSize.tab,
+        //   indicatorWeight: 2.0,
+        //   tabs: <Widget>[
+        //     Tab(
+        //       icon: Icon(Icons.local_florist),
+        //     ),
+        //     Tab(
+        //       icon: Icon(Icons.change_history),
+        //     ),
+        //     Tab(
+        //       icon: Icon(Icons.accessibility),
+        //     ),
+        //     Tab(
+        //       icon: Icon(Icons.view_quilt),
+        //     ),
+        //   ],
+        // ),
+      ),
+      body: TabBarView(
+        children: <Widget>[
+          ListImges(),
+          // TestImg(),
+          // LayoutDemo(),
+          // SliverDemo(),
+        ],
+      ),
+      drawer: Container(
+        width: 300,
+        // height: 100,
+        color: Colors.white,
+        child: MyDrawerDemo(),
+      ),
+      // bottomNavigationBar: BottomNavigationDemo(),
+    );
   }
 }
 

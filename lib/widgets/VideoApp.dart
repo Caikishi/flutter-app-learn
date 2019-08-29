@@ -15,7 +15,7 @@ class _VideoAppState extends State<VideoApp> {
   void initState() {
     super.initState();
     _controller = VideoPlayerController.network(
-        'http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4')
+        'http://45.32.34.152:8080/SampleVideo_1280x720_10mb.mp4')
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});
@@ -25,15 +25,20 @@ class _VideoAppState extends State<VideoApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Video Demo',
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: Center(
-          child: _controller.value.initialized
+          child: Container(
+            color: Colors.black,
+            child: _controller.value.initialized
               ? AspectRatio(
                   aspectRatio: _controller.value.aspectRatio,
                   child: VideoPlayer(_controller),
                 )
               : Container(),
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {

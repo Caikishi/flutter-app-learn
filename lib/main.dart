@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'widgets/listImgesView.dart';
-import 'widgets/layout_demo.dart';
-import 'widgets/bottomNavigtion/bottomNavigtionDemo.dart';
-import 'widgets/BasicDemo.dart';
-import 'widgets/View_demo.dart';
-import 'widgets/sliver_demo.dart';
-import 'widgets/navigator_demo.dart';
-import 'widgets/VideoApp.dart';
+// import 'widgets/layout_demo.dart';
+// import 'widgets/bottomNavigtion/bottomNavigtionDemo.dart';
+// import 'widgets/BasicDemo.dart';
+// import 'widgets/View_demo.dart';
+// import 'widgets/sliver_demo.dart';
+// import 'widgets/navigator_demo.dart';
+// import 'widgets/VideoApp.dart';
 
 void main() => runApp(App());
 
@@ -17,16 +17,16 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: NavigatorDemo(),
-      initialRoute: '/home',
-      routes: {
-        '/': (context) => NavigatorDemo(),
-        '/about': (context) => NavigatorPage(title: 'About'),
-        '/home': (context) => Home(),
-      },
+      home: Home(),
+      // initialRoute: '/home',
+      // routes: {
+        // '/': (context) => NavigatorDemo(),
+        // '/about': (context) => NavigatorPage(title: 'About'),
+        // '/home': (context) => Home(),
+      // },
       theme: ThemeData(
         // primarySwatch: Colors.yellow,
-        primaryColor: Color.fromRGBO(251, 66, 117, 1),
+        primaryColor: Colors.redAccent,
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
         splashColor: Colors.white70,
       ),
@@ -126,7 +126,7 @@ class Page extends StatelessWidget {
         //   tooltip: 'Navigration',
         //   onPressed: () => debugPrint('Navigration button is pressed.'),
         // ),
-        title: Text('主页'),
+        title: Text('猫'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
@@ -172,12 +172,12 @@ class Page extends StatelessWidget {
           // SliverDemo(),
         ],
       ),
-      drawer: Container(
-        width: 300,
-        // height: 100,
-        color: Colors.white,
-        child: MyDrawerDemo(),
-      ),
+      // drawer: Container(
+      //   width: 300,
+      //   // height: 100,
+      //   color: Colors.white,
+      //   child: MyDrawerDemo(),
+      // ),
       // bottomNavigationBar: BottomNavigationDemo(),
     );
   }
